@@ -22,7 +22,9 @@ import { Routes,RouterModule } from '@angular/router';
 const appRoutes: Routes = [
   { path: 'auth/signup', component: SignupComponent},
   { path: 'auth/signin', component: SigninComponent},
-  { path: 'posts', component: PostListComponent},
+  { path: 'posts', canActivate: [AuthGuardService], component: PostListComponent},
+  { path: '', redirectTo:'posts', pathMatch:'full'},
+  { path: '**', redirectTo:'posts'}
 ]
 
 
