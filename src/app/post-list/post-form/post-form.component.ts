@@ -35,6 +35,13 @@ export class PostFormComponent implements OnInit {
 
   onSubmit(){
     console.log(this.postForm.value);
+    const dataPost = new Post(this.postForm.get('title').value,this.postForm.get('content').value);
+    this.postsService.createPost(dataPost);
+
+    this.postForm.reset();
+
+    this.router.navigate(['/posts']);
+  
   }
 
 
