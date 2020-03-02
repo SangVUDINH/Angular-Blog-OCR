@@ -1,4 +1,7 @@
 <p>post-list works!</p>
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+<app-address-form></app-address-form>
+
 <div class="row">
     <div class="col-xs-12">
         <h2>Vos Posts</h2>
@@ -16,6 +19,8 @@
                 <button (click)="addLike(post)">Like</button>
                 <button (click)="disLike(post)">Dislike</button>
             </h5>
+
+            <button class="" (click)='onRemovePost(i)'> Supprimer</button>
             
             </button>
         </div>

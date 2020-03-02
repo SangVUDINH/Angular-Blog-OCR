@@ -9,7 +9,9 @@ import DataSnapshot = firebase.database.DataSnapshot;
   providedIn: 'root'
 })
 export class PostsService {
-  posts: Post[]=[];
+  posts: Post[]=[new Post("post1","content")];
+
+  
   postsSubject = new Subject<Post[]>();
 
   constructor() { }
@@ -30,15 +32,11 @@ export class PostsService {
     this.emitPost();
   }
 
-  getPosts(){
-    
+
+  removePost(index: number){
+    this.posts.splice(index,1);
+    this.emitPost();
   }
-
-
-
-
-
-
 
 
 

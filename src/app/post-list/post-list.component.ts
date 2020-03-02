@@ -35,11 +35,6 @@ export class PostListComponent implements OnInit, OnDestroy {
   }
 
 
-  getPosts(){
-    this.postsService.posts= this.posts;
-    console.log(this.posts);
-  }
-
   addLike(post:Post){
     post.like= post.like+1;
   }
@@ -51,6 +46,10 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   onNewPost() {
     this.router.navigate(['/posts', 'new']);
+  }
+
+  onRemovePost(index: number){
+    this.postsService.removePost(index);
   }
 
 }
